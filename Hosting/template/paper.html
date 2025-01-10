@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Arpan</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<!-- Main CSS File -->
+<link href="{% static 'css/main.css' %}" rel="stylesheet">
+
+
+</head>
+<body>
+
+  <header id="header" class="header dark-background d-flex flex-column">
+ 
+
+    <div class="profile-img">
+      <img src="{% static 'img/profile.jpg' %}" alt="" class="img-fluid rounded-circle">
+    </div>
+
+      <h2  class="text-center">
+        Arpan Acharya
+      </h2>
+    
+      <sidebar id="navmenu" class="navmenu">
+      
+        <a href="#about"><i class="bi bi-twitter-x navicon"></i> Twitter</a>
+        <a href="CV .pdf" target="_blank"><i class="bi bi-facebook navicon"></i> Facebook</a>
+        <a href="#portfolio"><i class="bi bi-instagram navicon"></i> Instagram</a>
+        <a href="#portfolio"><i class="bi bi-github navicon"></i> Github</a>
+        <a href="#services"><i class="bi bi-linkedin navicon"></i> Linkedin</a></li>
+      
+      </sidebar>
+    
+  </header>
+
+  <main class="main">
+    <nav class="navigation">
+        <a href="{% url 'home' %}">
+          <i class="bi bi-house navicon"></i> Home
+        </a>
+       
+        <a href="{% static 'img/cv.pdf' %}" target="_blank">
+          <i class="bi bi-file-earmark-text navicon"></i> CV
+        </a>
+        <a href="https://github.com/Arpan9945" target="_blank">
+          <i class="bi bi-code navicon"></i> Code
+        </a>
+        <a href="{% url 'research_papers' %}"  class="active">
+          <i class="bi bi-hdd-stack navicon"></i> Research Paper
+        </a>
+        <a href="{% url 'contact' %}">
+          <i class="bi bi-envelope navicon"></i> Contact
+        </a>
+      </nav>
+  </main>
+
+    <section id="paper" class="paper section light-background">
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <h1>Research Papers</h1>
+
+    {% if papers %}
+        <ul>
+            {% for paper in papers %}
+                <li>
+                    <strong>{{ paper.title }}</strong><br>
+                    <!-- Abstract Button -->
+                    <button class="abstract-btn" data-paper-id="{{ paper.id }}">Show Abstract</button>
+                    <!-- Abstract Content -->
+                    <div id="abstract-{{ paper.id }}" class="abstract-content">
+                        <p>{{ paper.body }}</p> <!-- Show truncated body as abstract -->
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No research papers available.</p>
+    {% endif %}
+    
+
+      </div>
+    
+    </section>
+    <script>
+        // Wait for the DOM to fully load before attaching event listeners
+ document.addEventListener("DOMContentLoaded", function () {
+     // Attach event listeners to all buttons with the class "abstract-btn"
+     document.querySelectorAll('.abstract-btn').forEach(button => {
+         button.addEventListener('click', function () {
+             // Get the paper ID from the data attribute
+             const paperId = this.getAttribute('data-paper-id');
+             
+             // Find the corresponding abstract content div
+             const content = document.getElementById('abstract-' + paperId);
+             
+             // Toggle the visibility of the abstract content
+             if (content.style.display === 'none' || content.style.display === '') {
+                 content.style.display = 'block';  // Show the abstract
+             } else {
+                 content.style.display = 'none';   // Hide the abstract
+             }
+         });
+     });
+ });
+ 
+ 
+     </script>
+   
+    <footer>
+      All rights reserved by @<em>Arpan Acharya</em>
+    </footer>
+</body>
+</html>
