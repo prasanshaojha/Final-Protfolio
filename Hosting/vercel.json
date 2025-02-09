@@ -1,4 +1,5 @@
 {
+  "version": 2,
   "builds": [
     {
       "src": "Hosting/wsgi.py",
@@ -14,19 +15,5 @@
       "src": "/(.*)",
       "dest": "Hosting/wsgi.py"
     }
-  ],
-  "env": {
-    "DJANGO_SETTINGS_MODULE": "Hosting.settings.production"
-  },
-  "functions": {
-    "Hosting/wsgi.py": {
-      "maxDuration": 30
-    }
-  },
-  "build": {
-    "env": {
-      "DJANGO_SETTINGS_MODULE": "Hosting.settings.production"
-    },
-    "command": "python manage.py collectstatic --noinput"
-  }
+  ]
 }
