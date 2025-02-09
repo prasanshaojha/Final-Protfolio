@@ -1,12 +1,8 @@
 {
-  "version": 2,
   "builds": [
     {
       "src": "Hosting/wsgi.py",
-      "use": "@vercel/python",
-      "config": {
-        "maxLambdaSize": "50mb"
-      }
+      "use": "@vercel/python"
     }
   ],
   "routes": [
@@ -26,5 +22,11 @@
     "Hosting/wsgi.py": {
       "maxDuration": 30
     }
+  },
+  "build": {
+    "env": {
+      "DJANGO_SETTINGS_MODULE": "Hosting.settings.production"
+    },
+    "command": "python manage.py collectstatic --noinput"
   }
 }
