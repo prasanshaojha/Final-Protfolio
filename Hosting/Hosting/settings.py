@@ -25,9 +25,22 @@ TEMPLATE_DIR = os.path.join(BASE_DIR,'template')
 SECRET_KEY = 'django-insecure-bwso7k28r3hxo@$c2ou8h^t=giw9y@4_muc^k4w-lb%*(7@!qw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']  
+
+ALLOWED_HOSTS = [
+    'final-protfolio-gttgm9bdi-prasanshas-projects.vercel.app',
+    'final-protfolio-j6ewrzyo1-prasanshas-projects.vercel.app',
+    'final-protfolio-git-main-prasanshas-projects.vercel.app',
+    'final-protfolio-inky.vercel.app',
+    'final-protfolio-e50j4knlc-prasanshas-projects.vercel.app',
+    'final-protfolio-l5bzj6quo-prasanshas-projects.vercel.app',
+    'www.acharyaarpan.com.np',
+    'final-protfolio-hex0jp4gu-prasanshas-projects.vercel.app',
+    'final-protfolio-86rm7ic64-prasanshas-projects.vercel.app', '127.0.0.1',
+    'localhost'
+]
+
 
 
 # Application definition
@@ -131,13 +144,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 
+# settings.py
+
 STATIC_URL = '/static/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
+# Vercel uses a temporary file system for each deployment, so we need to point to the right location
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
+    BASE_DIR / 'static',  # for local development
 ]
+
+# This is the directory where static files are collected on Vercel (this is a temporary directory in serverless environments)
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 
 MEDIA_ROOT = BASE_DIR/'media'
