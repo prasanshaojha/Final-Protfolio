@@ -38,7 +38,8 @@ ALLOWED_HOSTS = [
     'www.acharyaarpan.com.np',
     'final-protfolio-hex0jp4gu-prasanshas-projects.vercel.app',
     'final-protfolio-86rm7ic64-prasanshas-projects.vercel.app', '127.0.0.1',
-    'localhost'
+    'localhost','final-protfolio-pzzjdcgpg-prasanshas-projects.vercel.app',
+    
 ]
 
 
