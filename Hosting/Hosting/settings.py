@@ -29,9 +29,10 @@ DEBUG = True
 
 
 ALLOWED_HOSTS = ['final-protfolio-pzzjdcgpg-prasanshas-projects.vercel.app',
+        'final-protfolio-blqwk970n-prasanshas-projects.vercel.app',
+        'final-protfolio-git-main-prasanshas-projects.vercel.app',
     'final-protfolio-gttgm9bdi-prasanshas-projects.vercel.app',
     'final-protfolio-j6ewrzyo1-prasanshas-projects.vercel.app',
-    'final-protfolio-git-main-prasanshas-projects.vercel.app',
     'final-protfolio-inky.vercel.app',
     'final-protfolio-e50j4knlc-prasanshas-projects.vercel.app',
     'final-protfolio-l5bzj6quo-prasanshas-projects.vercel.app',
