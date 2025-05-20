@@ -28,20 +28,7 @@ SECRET_KEY = 'django-insecure-bwso7k28r3hxo@$c2ou8h^t=giw9y@4_muc^k4w-lb%*(7@!qw
 DEBUG = True
 
 
-ALLOWED_HOSTS = ['final-protfolio-pzzjdcgpg-prasanshas-projects.vercel.app',
-        'final-protfolio-blqwk970n-prasanshas-projects.vercel.app',
-        'final-protfolio-git-main-prasanshas-projects.vercel.app',
-    'final-protfolio-gttgm9bdi-prasanshas-projects.vercel.app',
-    'final-protfolio-j6ewrzyo1-prasanshas-projects.vercel.app',
-    'final-protfolio-inky.vercel.app',
-    'final-protfolio-e50j4knlc-prasanshas-projects.vercel.app',
-    'final-protfolio-l5bzj6quo-prasanshas-projects.vercel.app',
-    'www.acharyaarpan.com.np',
-    'final-protfolio-hex0jp4gu-prasanshas-projects.vercel.app',
-    'final-protfolio-86rm7ic64-prasanshas-projects.vercel.app', '127.0.0.1',
-    'localhost',
-
-]
+ALLOWED_HOSTS = ['*']
 
 
 
